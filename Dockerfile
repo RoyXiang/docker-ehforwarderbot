@@ -28,9 +28,12 @@ RUN set -ex \
                 py3-retrying \
                 py3-yaml \
         && apk add --no-cache --virtual .build-deps \
+                git \
                 py3-pip \
                 py3-wheel \
+        && pip3 install pypng PyQRCode \
         && pip3 install -r requirements.txt \
-        && apk del .build-deps
+        && apk del .build-deps \
+        && rm -rf /tmp/*
 
 USER dokku

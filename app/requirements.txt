@@ -1,3 +1,4 @@
+-e git+https://github.com/RoyXiang/ItChat.git@549533e#egg=itchat
 ehforwarderbot==2.1.0
 efb-telegram-master==2.2.2
 efb-wechat-slave==2.0.4
