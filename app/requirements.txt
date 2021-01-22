@@ -1,3 +1,6 @@
 ehforwarderbot==2.1.0
 efb-telegram-master==2.2.2
 efb-wechat-slave==2.0.4
+efb-notice-middleware==0.0.6
+efb-patch-middleware==2.0.12
+efb-search-msg-middleware==0.1.0
