@@ -8,17 +8,6 @@ ENV HOME /home/dokku
 ENV FFMPEG_BINARY /usr/bin/ffmpeg
 
 RUN set -ex \
-        && apk add --no-cache \
-                ffmpeg \
-                libmagic \
-                mailcap \
-                python3 \
-                py3-beautifulsoup4 \
-                py3-cryptography \
-                py3-pillow \
-                py3-pip \
-                py3-wheel \
-                py3-yaml \
         && addgroup -g $PGID dokku \
         && adduser -D -u $PUID -G dokku dokku
 
@@ -26,6 +15,22 @@ WORKDIR /home/dokku
 
 COPY app/ /home/dokku/
 
-RUN pip3 install -r requirements.txt
+RUN set -ex \
+        && apk add --no-cache --virtual .run-deps \
+                ffmpeg \
+                libmagic \
+                mailcap \
+                python3 \
+                py3-beautifulsoup4 \
+                py3-cryptography \
+                py3-pillow \
+                py3-requests \
+                py3-retrying \
+                py3-yaml \
+        && apk add --no-cache --virtual .build-deps \
+                py3-pip \
+                py3-wheel \
+        && pip3 install -r requirements.txt \
+        && apk del .build-deps
 
 USER dokku
