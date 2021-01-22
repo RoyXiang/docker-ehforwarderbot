@@ -17,6 +17,7 @@ RUN set -ex \
                 py3-cryptography \
                 py3-pillow \
                 py3-pip \
+                py3-wheel \
                 py3-yaml \
         && addgroup -g $PGID dokku \
         && adduser -D -u $PUID -G dokku dokku
