@@ -19,8 +19,7 @@ RUN set -ex \
                 py3-pip \
                 py3-yaml \
         && addgroup -g $PGID dokku \
-        && adduser -D -u $PUID -G dokku dokku \
-        && mkdir /app
+        && adduser -D -u $PUID -G dokku dokku
 
 WORKDIR /home/dokku
 
