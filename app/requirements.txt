@@ -1,0 +1,3 @@
+ehforwarderbot==2.1.0
+efb-telegram-master==2.2.2
+efb-wechat-slave==2.0.4
