@@ -13,6 +13,7 @@ RUN set -ex \
                 libmagic \
                 mailcap \
                 python3 \
+                py3-beautifulsoup4 \
                 py3-cryptography \
                 py3-pillow \
                 py3-pip \
