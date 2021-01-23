@@ -19,6 +19,7 @@ COPY --chown=$USER:$USER app/ $HOME/
 
 RUN set -ex \
         && apk add --no-cache --virtual .run-deps \
+                ca-certificates \
                 ffmpeg \
                 libmagic \
                 mailcap \
