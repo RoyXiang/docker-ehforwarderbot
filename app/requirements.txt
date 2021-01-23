@@ -1,7 +1,6 @@
--e git+https://github.com/RoyXiang/ItChat.git@549533e#egg=itchat
 ehforwarderbot==2.1.0
 efb-telegram-master==2.2.2
-efb-wechat-slave==2.0.4
+-e git+https://github.com/RoyXiang/efb-wechat-slave.git@v2.0.4.post1#egg=efb-wechat-slave
 efb-mp-instantview-middleware==0.3.1
 efb-notice-middleware==0.0.6
 efb-patch-middleware==2.0.12

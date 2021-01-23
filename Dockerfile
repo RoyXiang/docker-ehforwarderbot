@@ -31,7 +31,6 @@ RUN set -ex \
                 git \
                 py3-pip \
                 py3-wheel \
-        && pip3 install pypng PyQRCode \
         && pip3 install -r requirements.txt \
         && apk del .build-deps \
         && rm -rf /tmp/*
