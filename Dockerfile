@@ -1,19 +1,21 @@
 FROM alpine:latest
 MAINTAINER Roy Xiang <developer@royxiang.me>
 
-ENV LANG C.UTF-8
-ENV PUID 1000
-ENV PGID 1000
-ENV HOME /home/dokku
+ARG PUID=1000
+ARG PGID=1000
+ARG USER=dokku
+
+ENV LANG zh_CN.UTF-8
+ENV HOME /home/$USER
 ENV FFMPEG_BINARY /usr/bin/ffmpeg
 
 RUN set -ex \
-        && addgroup -g $PGID dokku \
-        && adduser -D -u $PUID -G dokku dokku
+        && addgroup -g $PGID $USER \
+        && adduser -D -u $PUID -G $USER $USER
 
-WORKDIR /home/dokku
+WORKDIR $HOME
 
-COPY app/ /home/dokku/
+COPY --chown=$USER:$USER app/ $HOME/
 
 RUN set -ex \
         && apk add --no-cache --virtual .run-deps \
@@ -31,8 +33,8 @@ RUN set -ex \
                 git \
                 py3-pip \
                 py3-wheel \
-        && pip3 install -r requirements.txt \
+        && su - $USER -c "pip3 install -r requirements.txt" \
         && apk del .build-deps \
-        && rm -rf /tmp/*
+        && rm -rf /tmp/* $HOME/.cache
 
-USER dokku
+USER $USER
