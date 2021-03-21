@@ -1,5 +1,5 @@
 ehforwarderbot==2.1.0
-efb-telegram-master==2.2.2
+efb-telegram-master==2.2.3
 -e git+https://github.com/RoyXiang/efb-wechat-slave.git@v2.0.4.post1#egg=efb-wechat-slave
 efb-mp-instantview-middleware==0.3.1
 efb-notice-middleware==0.0.6
