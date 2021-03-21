@@ -3,5 +3,5 @@ efb-telegram-master==2.2.2
 -e git+https://github.com/RoyXiang/efb-wechat-slave.git@v2.0.4.post1#egg=efb-wechat-slave
 efb-mp-instantview-middleware==0.3.1
 efb-notice-middleware==0.0.6
-efb-patch-middleware==2.0.12
+efb-patch-middleware==2.0.13
 efb-search-msg-middleware==0.1.0
