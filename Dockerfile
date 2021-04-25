@@ -2,6 +2,7 @@ FROM alpine:latest
 MAINTAINER Roy Xiang <developer@royxiang.me>
 
 LABEL \
+    "traefik.enable"="true" \
     "traefik.http.routers.efb.rule"="Host(`efb.royxiang.me`)" \
     "traefik.http.services.efb.loadbalancer.server.port"="5000"
 
