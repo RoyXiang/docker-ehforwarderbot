@@ -1,6 +1,10 @@
 FROM alpine:latest
 MAINTAINER Roy Xiang <developer@royxiang.me>
 
+LABEL \
+    "traefik.http.routers.efb.rule"="Host(`efb.royxiang.me`)" \
+    "traefik.http.services.efb.loadbalancer.server.port"="5000"
+
 ARG PUID=1000
 ARG PGID=1000
 ARG USER=dokku
