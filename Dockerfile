@@ -20,10 +20,10 @@ RUN set -ex \
                 python3 \
                 py3-beautifulsoup4 \
                 py3-cryptography \
-                py3-packaging \
                 py3-pillow \
                 py3-requests \
                 py3-retrying \
+                py3-setuptools \
                 py3-yaml \
         && apk add --no-cache --virtual .build-deps \
                 git \
