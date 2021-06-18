@@ -1,0 +1,7 @@
+#!/usr/bin/with-contenv bash
+
+echo "Starting bot."
+
+export HOME=/app
+
+exec s6-setuidgid abc /usr/bin/python3 -m ehforwarderbot

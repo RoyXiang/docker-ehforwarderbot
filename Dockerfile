@@ -1,26 +1,15 @@
-FROM alpine:latest
-MAINTAINER Roy Xiang <developer@royxiang.me>
+FROM ghcr.io/linuxserver/baseimage-alpine:3.14
 
 LABEL \
     "traefik.enable"="true" \
     "traefik.http.routers.efb.rule"="Host(`efb.royxiang.me`)" \
     "traefik.http.services.efb.loadbalancer.server.port"="5000"
 
-ARG PUID=1000
-ARG PGID=1000
-ARG USER=dokku
+COPY app/ /app/
 
-ENV LANG zh_CN.UTF-8
-ENV HOME /home/$USER
-ENV FFMPEG_BINARY /usr/bin/ffmpeg
-
-RUN set -ex \
-        && addgroup -g $PGID $USER \
-        && adduser -D -u $PUID -G $USER $USER
-
-WORKDIR $HOME
-
-COPY --chown=$USER:$USER app/ $HOME/
+ENV \
+    LANG=zh_CN.UTF-8 \
+    FFMPEG_BINARY=/usr/bin/ffmpeg
 
 RUN set -ex \
         && apk add --no-cache --virtual .run-deps \
@@ -39,8 +28,13 @@ RUN set -ex \
                 git \
                 py3-pip \
                 py3-wheel \
-        && su - $USER -c "pip3 install -r requirements.txt" \
+        && cd /app \
+        && pip3 install -r requirements.txt \
         && apk del .build-deps \
-        && rm -rf /tmp/* $HOME/.cache
+        && rm -rf /tmp/* /var/cache/apk/* /root/.cache
 
-USER $USER
+WORKDIR /app
+
+ENTRYPOINT []
+
+CMD ["/init"]

@@ -10,13 +10,19 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: Add mask
+        env:
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+        run: |
+          echo "::add-mask::$SSH_HOST"
+
       - name: Cloning repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v2.3.4
         with:
           fetch-depth: 0
 
       - name: Push to dokku
-        uses: dokku/github-action@v1.0.1
+        uses: dokku/github-action@v1.0.2
         with:
           git_remote_url: ${{ secrets.GIT_REMOTE_URL }}
           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
