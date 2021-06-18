@@ -33,6 +33,8 @@ RUN set -ex \
         && apk del .build-deps \
         && rm -rf /tmp/* /var/cache/apk/* /root/.cache
 
+COPY etc/ /etc/
+
 WORKDIR /app
 
 ENTRYPOINT []
