@@ -19,7 +19,6 @@ RUN set -ex \
                 mailcap \
                 python3 \
                 py3-aiohttp \
-                py3-beautifulsoup4 \
                 py3-cryptography \
                 py3-pillow \
                 py3-requests \
