@@ -24,6 +24,7 @@ RUN set -ex \
                 py3-requests \
                 py3-retrying \
                 py3-setuptools \
+                py3-ujson \
                 py3-yaml \
         && apk add --no-cache --virtual .build-deps \
                 git \
