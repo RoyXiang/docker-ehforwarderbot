@@ -4,3 +4,4 @@ efb-telegram-master==2.2.4
 efb-qq-slave==2.0.1
 -e git+https://github.com/milkice233/efb-qq-plugin-mirai.git@9fcf207#egg=efb-qq-plugin-mirai
 efb-notice-middleware==0.0.6
+-e git+https://github.com/RoyXiang/python-mirai-core.git@v0.8.6.post1#egg=python-mirai-core
