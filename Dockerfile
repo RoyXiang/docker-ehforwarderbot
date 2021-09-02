@@ -15,17 +15,16 @@ RUN set -ex \
         && apk add --no-cache --virtual .run-deps \
                 ca-certificates \
                 ffmpeg \
-                libmagic \
                 mailcap \
                 python3 \
                 py3-aiohttp \
                 py3-cryptography \
+                py3-magic \
                 py3-pillow \
                 py3-requests \
                 py3-retrying \
                 py3-ruamel.yaml \
                 py3-setuptools \
-                py3-typing-extensions \
                 py3-ujson \
                 py3-websocket-client \
                 py3-yaml \
