@@ -18,13 +18,21 @@ RUN set -ex \
                 mailcap \
                 python3 \
                 py3-aiohttp \
+                py3-cachetools \
                 py3-cryptography \
+                py3-flask \
+                py3-future \
+                py3-jaraco-classes \
+                py3-jaraco-functools \
                 py3-magic \
+                py3-peewee \
                 py3-pillow \
                 py3-requests \
                 py3-retrying \
                 py3-ruamel.yaml \
                 py3-setuptools \
+                py3-tempora \
+                py3-tornado \
                 py3-ujson \
                 py3-websocket-client \
                 py3-yaml \
