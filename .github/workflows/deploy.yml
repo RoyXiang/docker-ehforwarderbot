@@ -5,6 +5,8 @@ on:
   push:
     branches:
       - master
+    paths-ignore:
+      - '.github/**'
 
 jobs:
   deploy:
@@ -17,7 +19,7 @@ jobs:
           echo "::add-mask::$SSH_HOST"
 
       - name: Cloning repo
-        uses: actions/checkout@v2.3.5
+        uses: actions/checkout@v2.4.0
         with:
           fetch-depth: 0
 
