@@ -1,9 +1,8 @@
 ehforwarderbot==2.1.1
 efb-telegram-master==2.2.4
--e git+https://github.com/RoyXiang/efb-wechat-slave.git@v2.0.5.post1#egg=efb-wechat-slave
+efb-wechat-slave==2.0.5
 efb-qq-slave==2.0.1
--e git+https://github.com/milkice233/efb-qq-plugin-mirai.git@9fcf207#egg=efb-qq-plugin-mirai
+efb-qq-plugin-mirai==2.0.4
 efb-msg-blocker-middleware==1.1.0
 efb-notice-middleware==0.0.6
 efb-voice-recog-middleware==1.0.3
--e git+https://github.com/RoyXiang/python-mirai-core.git@v0.8.6.post1#egg=python-mirai-core

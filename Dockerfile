@@ -1,4 +1,4 @@
-FROM ghcr.io/linuxserver/baseimage-alpine:3.14
+FROM ghcr.io/linuxserver/baseimage-alpine:3.15
 
 LABEL \
     "traefik.enable"="true" \
@@ -40,10 +40,9 @@ RUN set -ex \
                 git \
                 py3-pip \
                 py3-wheel \
-        && cd /app \
-        && pip3 install -r requirements.txt \
+        && /app/install.sh \
         && apk del .build-deps \
-        && rm -rf /tmp/* /var/cache/apk/* /root/.cache
+        && rm -rf /tmp/* /var/cache/apk/*
 
 COPY etc/ /etc/
 
