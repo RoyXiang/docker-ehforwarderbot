@@ -12,7 +12,7 @@ ENV \
     FFMPEG_BINARY=/usr/bin/ffmpeg
 
 RUN set -ex \
-        && apk add --no-cache --virtual .run-deps \
+        && apk add --virtual .run-deps \
                 ca-certificates \
                 ffmpeg \
                 mailcap \
@@ -36,7 +36,7 @@ RUN set -ex \
                 py3-ujson \
                 py3-websocket-client \
                 py3-yaml \
-        && apk add --no-cache --virtual .build-deps \
+        && apk add --virtual .build-deps \
                 git \
                 py3-pip \
                 py3-wheel \
