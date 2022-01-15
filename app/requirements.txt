@@ -1,6 +1,6 @@
 ehforwarderbot==2.1.1
 efb-telegram-master==2.2.4
-efb-wechat-slave==2.0.5
+efb-wechat-slave==2.0.6
 efb-qq-slave==2.0.1
 efb-qq-plugin-mirai==2.0.4
 efb-msg-blocker-middleware==1.1.0
