@@ -19,7 +19,7 @@ jobs:
           echo "::add-mask::$SSH_HOST"
 
       - name: Cloning repo
-        uses: actions/checkout@v2.4.0
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
