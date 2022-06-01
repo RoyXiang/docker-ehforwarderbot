@@ -5,8 +5,6 @@ LABEL \
     "traefik.http.routers.efb.rule"="Host(`efb.royxiang.me`)" \
     "traefik.http.services.efb.loadbalancer.server.port"="5000"
 
-COPY app/ /app/
-
 ENV \
     LANG=zh_CN.UTF-8 \
     FFMPEG_BINARY=/usr/bin/ffmpeg
@@ -35,10 +33,17 @@ RUN set -ex \
                 py3-tornado \
                 py3-ujson \
                 py3-yaml \
+        && rm -rf /tmp/* /var/cache/apk/*
+
+COPY app/ /app/
+
+RUN set -ex \
         && apk add --virtual .build-deps \
+                build-base \
                 git \
                 py3-pip \
                 py3-wheel \
+                python3-dev \
         && /app/install.sh \
         && apk del .build-deps \
         && rm -rf /tmp/* /var/cache/apk/*
