@@ -16,7 +16,6 @@ RUN set -ex \
                 mailcap \
                 python3 \
                 py3-aiohttp \
-                py3-cachetools \
                 py3-cryptography \
                 py3-flask \
                 py3-future \
@@ -24,7 +23,7 @@ RUN set -ex \
                 py3-jaraco-functools \
                 py3-magic \
                 py3-peewee \
-                py3-pillow \
+                py3-pillow=9.0.1-r0 \
                 py3-requests \
                 py3-retrying \
                 py3-ruamel.yaml \
