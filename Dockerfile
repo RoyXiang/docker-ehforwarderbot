@@ -1,4 +1,4 @@
-FROM ghcr.io/linuxserver/baseimage-alpine:3.15
+FROM ghcr.io/linuxserver/baseimage-alpine:3.16
 
 LABEL \
     "traefik.enable"="true" \
@@ -34,7 +34,6 @@ RUN set -ex \
                 py3-tempora \
                 py3-tornado \
                 py3-ujson \
-                py3-websocket-client \
                 py3-yaml \
         && apk add --virtual .build-deps \
                 git \
