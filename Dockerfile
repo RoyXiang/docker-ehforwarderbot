@@ -32,6 +32,7 @@ RUN set -ex \
                 py3-tornado \
                 py3-ujson \
                 py3-yaml \
+                sqlite \
         && rm -rf /tmp/* /var/cache/apk/*
 
 COPY app/ /app/
