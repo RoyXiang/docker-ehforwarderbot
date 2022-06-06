@@ -1,4 +1,12 @@
 {
+  "dokku": {
+    "volumes": [
+      {
+        "host": "/opt/dokku/ehForwarderBot",
+        "app": "/app/.ehforwarderbot"
+      }
+    ]
+  },
   "formation": {
     "web": {
       "quantity": 1
