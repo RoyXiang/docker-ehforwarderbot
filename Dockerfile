@@ -43,12 +43,8 @@ RUN set -ex \
 
 ENV \
     LANG=zh_CN.UTF-8 \
-    EFB_DATA_PATH=/app/.ehforwarderbot \
+    EFB_DATA_PATH=/config \
     FFMPEG_BINARY=/usr/bin/ffmpeg \
     PATH="/app/.venv/bin:$PATH"
 
 COPY etc/ /etc/
-
-WORKDIR /app
-
-VOLUME /app/.ehforwarderbot
