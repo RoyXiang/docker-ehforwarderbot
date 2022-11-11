@@ -10,7 +10,6 @@ pip3 install -r "$APPDIR/requirements.txt"
 pip3 install --no-deps -e git+https://github.com/RoyXiang/efb-wechat-slave.git@v2.0.7.post2#egg=efb-wechat-slave
 # install latest version of efb-qq-slave
 pip3 install --no-deps -e git+https://github.com/ehForwarderBot/efb-qq-slave.git@0df5ddc#egg=efb-qq-slave
-pip3 uninstall -y cqhttp
 # install latest version of efb-qq-plugin-go-cqhttp
 pip3 install "aiocqhttp~=1.4.3"
 pip3 install "pilk~=0.0.2"
