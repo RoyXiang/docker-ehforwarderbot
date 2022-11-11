@@ -1,7 +1,5 @@
 FROM ghcr.io/linuxserver/baseimage-alpine:3.16
 
-LABEL "com.dokku.docker-image-labeler/alternate-tags"="[\"ghcr.io/linuxserver/baseimage-alpine:3.16\"]"
-
 RUN set -ex \
         && apk add --virtual .run-deps \
                 ca-certificates \
@@ -52,7 +50,3 @@ WORKDIR /app
 VOLUME /app/.ehforwarderbot
 
 EXPOSE 5000
-
-ENTRYPOINT []
-
-CMD ["/init"]
