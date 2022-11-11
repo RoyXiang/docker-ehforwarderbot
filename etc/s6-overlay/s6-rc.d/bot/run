@@ -2,6 +2,4 @@
 
 echo "Starting bot."
 
-export HOME=/app
-
-exec s6-setuidgid abc /usr/bin/python3 -m ehforwarderbot
+exec s6-setuidgid abc ehforwarderbot

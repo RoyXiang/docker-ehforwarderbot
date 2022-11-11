@@ -25,29 +25,30 @@ RUN set -ex \
                 py3-ujson \
                 py3-yaml \
                 sqlite \
-        && rm -rf /tmp/* /var/cache/apk/*
+        && rm -rf /var/cache/apk/*
 
 COPY app/ /app/
-
-ENV \
-    LANG=zh_CN.UTF-8 \
-    FFMPEG_BINARY=/usr/bin/ffmpeg
 
 RUN set -ex \
         && apk add --virtual .build-deps \
                 build-base \
                 git \
                 py3-pip \
+                py3-virtualenv \
                 py3-wheel \
                 python3-dev \
         && /app/install.sh \
         && apk del .build-deps \
-        && rm -rf /tmp/* /var/cache/apk/*
+        && rm -rf /var/cache/apk/*
+
+ENV \
+    LANG=zh_CN.UTF-8 \
+    EFB_DATA_PATH=/app/.ehforwarderbot \
+    FFMPEG_BINARY=/usr/bin/ffmpeg \
+    PATH="/app/.venv/bin:$PATH"
 
 COPY etc/ /etc/
 
 WORKDIR /app
 
 VOLUME /app/.ehforwarderbot
-
-EXPOSE 5000
