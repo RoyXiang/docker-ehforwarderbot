@@ -7,6 +7,7 @@ RUN set -ex \
                 mailcap \
                 python3 \
                 py3-aiohttp \
+                py3-cairocffi \
                 py3-cryptography \
                 py3-flask \
                 py3-future \
