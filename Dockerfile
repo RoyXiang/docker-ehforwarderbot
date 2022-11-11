@@ -1,13 +1,6 @@
 FROM ghcr.io/linuxserver/baseimage-alpine:3.16
 
-LABEL \
-    "traefik.enable"="true" \
-    "traefik.http.routers.efb.rule"="Host(`efb.royxiang.me`)" \
-    "traefik.http.services.efb.loadbalancer.server.port"="5000"
-
-ENV \
-    LANG=zh_CN.UTF-8 \
-    FFMPEG_BINARY=/usr/bin/ffmpeg
+LABEL "com.dokku.docker-image-labeler/alternate-tags"="[\"ghcr.io/linuxserver/baseimage-alpine:3.16\"]"
 
 RUN set -ex \
         && apk add --virtual .run-deps \
@@ -37,6 +30,10 @@ RUN set -ex \
 
 COPY app/ /app/
 
+ENV \
+    LANG=zh_CN.UTF-8 \
+    FFMPEG_BINARY=/usr/bin/ffmpeg
+
 RUN set -ex \
         && apk add --virtual .build-deps \
                 build-base \
@@ -51,6 +48,10 @@ RUN set -ex \
 COPY etc/ /etc/
 
 WORKDIR /app
+
+VOLUME /app/.ehforwarderbot
+
+EXPOSE 5000
 
 ENTRYPOINT []
 
