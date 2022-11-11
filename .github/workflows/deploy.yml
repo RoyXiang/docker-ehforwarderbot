@@ -6,25 +6,58 @@ on:
     branches:
       - master
     paths-ignore:
-      - '.github/**'
+      - '.github/dependabot.yml'
 
 jobs:
-  deploy:
+  docker:
+    name: Build and push Docker image
+    runs-on: ubuntu-latest
+    outputs:
+      meta: ${{ steps.meta.outputs.json }}
+    steps:
+      -
+        name: Docker meta
+        id: meta
+        uses: docker/metadata-action@v4
+        with:
+          images: ghcr.io/${{ github.repository_owner }}/ehforwarderbot
+          tags: |
+            type=sha,prefix=sha-,format=short
+            type=raw,value=latest
+      -
+        name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+      -
+        name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+      -
+        name: Login to GitHub Container Registry
+        uses: docker/login-action@v2
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      -
+        name: Build and push
+        uses: docker/build-push-action@v3
+        with:
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+  dokku:
+    name: Deploy to dokku host
+    needs: docker
     runs-on: ubuntu-latest
     steps:
-      - name: Add mask
-        env:
-          SSH_HOST: ${{ secrets.SSH_HOST }}
-        run: |
-          echo "::add-mask::$SSH_HOST"
-
-      - name: Cloning repo
-        uses: actions/checkout@v3
+      -
+        name: Build app
+        uses: appleboy/ssh-action@v0.1.5
         with:
-          fetch-depth: 0
-
-      - name: Push to dokku
-        uses: dokku/github-action@v1.3.0
-        with:
-          git_remote_url: ${{ secrets.GIT_REMOTE_URL }}
-          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+          host: ${{ secrets.SSH_HOST }}
+          username: dokku
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            git:from-image ${{ secrets.DOKKU_APP }} ${{ fromJson(needs.docker.outputs.meta).tags[1] }}
