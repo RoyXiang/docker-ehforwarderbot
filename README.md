@@ -1,6 +1,6 @@
 Unofficial Docker image for [EH Forwarder Bot](https://github.com/ehForwarderBot/ehForwarderBot). Maintained by [Roy Xiang](http://github.com/RoyXiang).
 
-# Installed Channels and middlewares
+# Installed Channels and Middlewares
 
 * [efb-telegram-master[tgs]](https://github.com/ehForwarderBot/efb-telegram-master)
 * [efb-wechat-slave (forked version)](https://github.com/RoyXiang/efb-wechat-slave/tree/itchat)
