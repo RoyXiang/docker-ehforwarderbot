@@ -12,7 +12,7 @@ pip3 install -U pip
 # install basic packages
 pip3 install -r $APPDIR/requirements.txt
 # install forked version of efb-wechat-slave
-pip3 install --no-deps -e git+https://github.com/RoyXiang/efb-wechat-slave.git@v2.0.7.post2#egg=efb-wechat-slave
+pip3 install --no-deps -e git+https://github.com/RoyXiang/efb-wechat-slave.git@v2.0.7.post3#egg=efb-wechat-slave
 # install latest version of efb-qq-slave
 pip3 install --no-deps -e git+https://github.com/ehForwarderBot/efb-qq-slave.git@0df5ddc#egg=efb-qq-slave
 pip3 uninstall -y cqhttp
