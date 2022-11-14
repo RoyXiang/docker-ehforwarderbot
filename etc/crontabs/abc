@@ -1,1 +1,1 @@
-0 6 * * * /app/cleanup_database.sh
+0 6 * * * /etc/s6-overlay/scripts/cleanup-database

@@ -44,7 +44,9 @@ RUN set -ex \
 ENV \
     LANG=zh_CN.UTF-8 \
     EFB_DATA_PATH=/config \
+    EFB_PROFILE=default \
     FFMPEG_BINARY=/usr/bin/ffmpeg \
-    PATH="/app/.venv/bin:$PATH"
+    PATH="/app/.venv/bin:$PATH" \
+    S6_BEHAVIOUR_IF_STAGE2_FAILS=2
 
 COPY etc/ /etc/

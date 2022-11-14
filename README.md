@@ -17,9 +17,10 @@ Start a Docker container by the following command:
 ```
 docker run -d --restart=always \
     --name=ehforwarderbot \
-    -e "PUID=1000"
-    -e "PGID=1000"
-    -e "TZ=Asia/Shanghai"
+    -e "PUID=1000" \
+    -e "PGID=1000" \
+    -e "TZ=Asia/Shanghai" \
+    -e "EFB_PROFILE=default" \
     -v $(pwd)/.ehforwarderbot:/config \
     ghcr.io/royxiang/ehforwarderbot:latest
 ```

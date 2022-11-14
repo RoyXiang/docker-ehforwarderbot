@@ -1,3 +1,0 @@
-#!/usr/bin/with-contenv bash
-
-crontab -u abc /etc/crontabs/abc
