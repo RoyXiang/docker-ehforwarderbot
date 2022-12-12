@@ -56,7 +56,7 @@ jobs:
     steps:
       -
         name: Build app
-        uses: appleboy/ssh-action@v0.1.5
+        uses: appleboy/ssh-action@v0.1.6
         with:
           host: ${{ secrets.SSH_HOST }}
           username: dokku
