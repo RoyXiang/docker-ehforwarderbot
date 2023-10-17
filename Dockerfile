@@ -21,7 +21,6 @@ RUN set -ex \
                 py3-ruamel.yaml \
                 py3-setuptools \
                 py3-tempora \
-                py3-tornado \
                 py3-ujson \
                 py3-yaml \
                 sqlite \
