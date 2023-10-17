@@ -14,8 +14,12 @@ jobs:
   docker:
     name: Build and push Docker image
     runs-on: ubuntu-latest
-    outputs:
-      meta: ${{ steps.meta.outputs.json }}
+    strategy:
+      fail-fast: false
+      matrix:
+        platform:
+          - linux/amd64
+          - linux/arm64
     steps:
       -
         name: Docker meta
@@ -44,6 +48,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
+          platforms: ${{ matrix.platform }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
