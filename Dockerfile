@@ -1,4 +1,4 @@
-FROM ghcr.io/linuxserver/baseimage-alpine:3.17
+FROM ghcr.io/linuxserver/baseimage-alpine:3.18
 
 RUN set -ex \
         && apk add --virtual .run-deps \
