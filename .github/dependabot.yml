@@ -6,12 +6,7 @@ updates:
       interval: "daily"
       time: "09:00"
       timezone: "Asia/Shanghai"
-  - package-ecosystem: "docker"
-    directory: "/"
-    schedule:
-      interval: "daily"
-      time: "09:00"
-      timezone: "Asia/Shanghai"
+
   - package-ecosystem: "pip"
     directory: "/app"
     schedule:
