@@ -6,8 +6,11 @@ Unofficial Docker image for [EH Forwarder Bot](https://github.com/ehForwarderBot
 * [efb-wechat-slave (forked version)](https://github.com/RoyXiang/efb-wechat-slave/tree/itchat)
 * [efb-qq-slave](https://github.com/ehForwarderBot/efb-qq-slave)
 * [efb-qq-plugin-go-cqhttp](https://github.com/ehForwarderBot/efb-qq-plugin-go-cqhttp)
+* [efb-gpg-middleware](https://github.com/ehForwarderBot/efb-gpg-middleware)
 * [efb-msg-blocker-middleware](https://github.com/ehForwarderBot/efb-msg_blocker-middleware)
 * [efb-notice-middleware](https://github.com/ehForwarderBot/efb-notice-middleware)
+* [efb-patch-middleware](https://github.com/ehForwarderBot/efb-patch-middleware)
+* [efb-search-msg-middleware](https://github.com/catbaron0/efb-search_msg-middleware)
 * [efb-voice-recog-middleware](https://github.com/ehForwarderBot/efb-voice_recog-middleware)
 
 # Get Started
