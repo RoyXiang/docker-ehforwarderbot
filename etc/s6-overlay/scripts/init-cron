@@ -1,4 +1,0 @@
-#!/command/with-contenv bash
-
-chown abc:abc /etc/crontabs/abc
-crontab -u abc /etc/crontabs/abc
