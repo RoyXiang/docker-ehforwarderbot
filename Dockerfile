@@ -33,12 +33,13 @@ RUN set -ex \
                 build-base \
                 git \
                 py3-pip \
-                py3-virtualenv \
                 py3-wheel \
                 python3-dev \
-        && /app/install.sh \
+        && pip3 install uv \
+        && uv pip install --system --override /app/overrides.txt -r /app/requirements.txt \
+        && pip3 uninstall -y uv \
         && apk del .build-deps \
-        && rm -rf /var/cache/apk/*
+        && rm -rf /var/cache/apk/* /root/.cache /root/.local
 
 ENV \
     LANG=zh_CN.UTF-8 \

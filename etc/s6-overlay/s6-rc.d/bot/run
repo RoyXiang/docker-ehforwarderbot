@@ -2,4 +2,4 @@
 
 echo "Starting bot."
 
-exec s6-setuidgid abc python -m ehforwarderbot --profile $EFB_PROFILE
+exec s6-setuidgid abc ehforwarderbot --profile $EFB_PROFILE
