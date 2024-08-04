@@ -2,4 +2,8 @@
 
 echo "Starting bot."
 
-exec s6-setuidgid abc ehforwarderbot --profile $EFB_PROFILE
+if [ $EFB_VERBOSE ]; then
+    exec s6-setuidgid abc ehforwarderbot --profile $EFB_PROFILE -v
+else
+    exec s6-setuidgid abc ehforwarderbot --profile $EFB_PROFILE
+fi
