@@ -46,7 +46,6 @@ ENV \
     EFB_DATA_PATH=/config \
     EFB_PROFILE=default \
     FFMPEG_BINARY=/usr/bin/ffmpeg \
-    PATH="/app/.venv/bin:$PATH" \
     S6_BEHAVIOUR_IF_STAGE2_FAILS=2
 
 COPY etc/ /etc/
