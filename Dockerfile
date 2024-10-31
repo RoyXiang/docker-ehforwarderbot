@@ -4,6 +4,7 @@ RUN set -ex \
         && apk add --virtual .run-deps \
                 ca-certificates \
                 ffmpeg \
+                libmagic \
                 mailcap \
                 python3 \
                 py3-aiohttp \
@@ -13,7 +14,6 @@ RUN set -ex \
                 py3-future \
                 py3-jaraco-classes \
                 py3-jaraco-functools \
-                py3-magic \
                 py3-peewee \
                 py3-pillow \
                 py3-requests \

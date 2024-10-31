@@ -1,2 +1,1 @@
-python-magic~=0.4.24
 python-telegram-bot~=13.11
